@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Bank Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🩸 Blood Bank Management System</h1>
+    <p>Console-based C++ Project – Web Demonstration</p>
+</header>
+
+<nav>
+    <button onclick="showSection('add')">Add Donor</button>
+    <button onclick="showSection('search')">Search Donor</button>
+    <button onclick="showSection('list')">All Donors</button>
+    <button onclick="showSection('eligibility')">Check Eligibility</button>
+</nav>
+
+<section id="add" class="card">
+    <h2>Add Donor</h2>
+    <form>
+        <input type="text" placeholder="Name">
+        <input type="number" placeholder="Age">
+        <input type="text" placeholder="Blood Group (A+, O-)">
+        <input type="text" placeholder="Phone Number">
+        <input type="text" placeholder="Address">
+        <input type="date">
+        <button type="button">Add Donor</button>
+    </form>
+    <p class="note">✔ Simulates <b>AddDonor()</b> function in C++</p>
+</section>
+
+<section id="search" class="card hidden">
+    <h2>Search Donor by Blood Group</h2>
+    <input type="text" placeholder="Enter Blood Group">
+    <button>Search</button>
+
+    <div class="result">
+        <p><b>Name:</b> John Doe</p>
+        <p><b>Blood Group:</b> O+</p>
+        <p><b>Phone:</b> 9876543210</p>
+    </div>
+    <p class="note">✔ Simulates <b>SearchDonor()</b></p>
+</section>
+
+<section id="list" class="card hidden">
+    <h2>All Donors</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood Group</th>
+            <th>Phone</th>
+            <th>Last Donation</th>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>25</td>
+            <td>A+</td>
+            <td>9999999999</td>
+            <td>2024-01-10</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>30</td>
+            <td>O-</td>
+            <td>8888888888</td>
+            <td>2023-09-05</td>
+        </tr>
+    </table>
+
+    <p class="note">✔ Simulates <b>ShowAllDonors()</b></p>
+</section>
+
+<section id="eligibility" class="card hidden">
+    <h2>Eligibility Check</h2>
+
+    <ul>
+        <li>Alice (A+) – ✅ Eligible</li>
+        <li>Bob (O-) – ❌ Not Eligible</li>
+    </ul>
+
+    <p class="note">✔ Based on <b>monthsDiffISO()</b> logic (3 months rule)</p>
+</section>
+
+<footer>
+    <p>© Blood Bank Management System | C++ OOP Project</p>
+</footer>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('section').forEach(sec => {
+            sec.classList.add('hidden');
+        });
+        document.getElementById(id).classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
